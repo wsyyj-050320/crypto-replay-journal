@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:05,000
+Meet Crypto Replay Journal. A sharper way to review crypto trades.
+
+2
+00:00:05,000 --> 00:00:10,000
+Scan unusual moves, track paper equity, and keep drawdown in view.
+
+3
+00:00:10,000 --> 00:00:15,000
+Filter risk context without turning alerts into advice.
+
+4
+00:00:15,000 --> 00:00:20,000
+Replay decisions candle by candle, compare exits, and write the lesson down.
+
+5
+00:00:20,000 --> 00:00:25,000
+Then finish the day with a clean research report.
+
+6
+00:00:25,000 --> 00:00:30,000
+No directional calls. No financial advice.

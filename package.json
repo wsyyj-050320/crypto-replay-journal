@@ -1,0 +1,22 @@
+{
+  "name": "crypto-replay-journal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source crypto paper trading, strategy replay, and risk journaling dashboard.",
+  "scripts": {
+    "build:assets": "python scripts/build-assets.py",
+    "build:narrated-video": "python scripts/build-narrated-video.py",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-release.ps1",
+    "check": "node scripts/check-static.js",
+    "lint": "node --check demo/app.js && node --check scripts/check-static.js && python -m py_compile scripts/build-assets.py scripts/build-narrated-video.py",
+    "format:check": "npx prettier@latest --check \"**/*.{html,css,js,json,md}\""
+  },
+  "keywords": [
+    "crypto",
+    "paper-trading",
+    "trade-journal",
+    "strategy-replay",
+    "risk"
+  ],
+  "license": "MIT"
+}

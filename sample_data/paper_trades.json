@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "BTCUSDT",
+    "side": "long",
+    "entry": 64240,
+    "exit": 65795,
+    "result_r": 1.8,
+    "fee_rate": 0.0008,
+    "slippage_rate": 0.0005,
+    "exit_reason": "Trailing exit",
+    "journal_tags": ["Good Exit", "Plan Followed"]
+  },
+  {
+    "symbol": "SOLUSDT",
+    "side": "long",
+    "entry": 152.4,
+    "exit": 150.9,
+    "result_r": -0.7,
+    "fee_rate": 0.0008,
+    "slippage_rate": 0.0005,
+    "exit_reason": "Planned stop",
+    "journal_tags": ["Stop Respected", "High Volatility"]
+  },
+  {
+    "symbol": "ETHUSDT",
+    "side": "long",
+    "entry": 3198,
+    "exit": 3234,
+    "result_r": 0.4,
+    "fee_rate": 0.0008,
+    "slippage_rate": 0.0005,
+    "exit_reason": "Partial target",
+    "journal_tags": ["Partial Exit", "Plan Followed"]
+  }
+]

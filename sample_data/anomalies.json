@@ -1,0 +1,34 @@
+[
+  {
+    "symbol": "SOLUSDT",
+    "one_hour_move": 4.2,
+    "twenty_four_hour_move": 11.8,
+    "volume_expansion": 3.6,
+    "risk_score": "High",
+    "context": "Momentum extended, volatility spike"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "one_hour_move": 1.1,
+    "twenty_four_hour_move": 3.4,
+    "volume_expansion": 1.8,
+    "risk_score": "Medium",
+    "context": "Range breakout under review"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "one_hour_move": -0.8,
+    "twenty_four_hour_move": 2.2,
+    "volume_expansion": 1.4,
+    "risk_score": "Low",
+    "context": "Normal volatility regime"
+  },
+  {
+    "symbol": "WIFUSDT",
+    "one_hour_move": 7.9,
+    "twenty_four_hour_move": 18.5,
+    "volume_expansion": 5.2,
+    "risk_score": "High",
+    "context": "Overheated short-term move"
+  }
+]

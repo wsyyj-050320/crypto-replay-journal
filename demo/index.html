@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crypto Replay Journal Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="rail" aria-label="Primary">
+      <div class="brand">
+        <span class="mark">CR</span>
+        <span>Crypto Replay Journal</span>
+      </div>
+      <nav>
+        <a href="#dashboard" class="active">Dashboard</a>
+        <a href="#scanner">Anomaly Scanner</a>
+        <a href="#paper">Paper Trading</a>
+        <a href="#journal">Trade Journal</a>
+        <a href="#replay">Strategy Replay</a>
+        <a href="#report">Daily Report</a>
+      </nav>
+      <p class="rail-note">
+        Research and educational use only. Not financial advice.
+      </p>
+    </aside>
+
+    <main>
+      <section id="dashboard" class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Research workspace</p>
+            <h1>
+              Paper trading, replay, and risk review for crypto decisions.
+            </h1>
+          </div>
+          <button class="ghost-button" type="button">Export review</button>
+        </header>
+
+        <section class="metrics" aria-label="Dashboard metrics">
+          <div class="metric">
+            <span>Market anomalies</span>
+            <strong>18</strong>
+            <small>Across spot and perpetual watchlists</small>
+          </div>
+          <div class="metric danger">
+            <span>Current drawdown</span>
+            <strong>-6.8%</strong>
+            <small>Paper account, last 30 days</small>
+          </div>
+          <div class="metric">
+            <span>Worst daily loss</span>
+            <strong>-2.4%</strong>
+            <small>Includes fees and slippage</small>
+          </div>
+          <div class="metric warning">
+            <span>Risk level</span>
+            <strong>Medium</strong>
+            <small>Volatility elevated</small>
+          </div>
+        </section>
+
+        <section class="split">
+          <div class="panel wide">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Paper account</p>
+                <h2>Equity curve</h2>
+              </div>
+              <span class="assumption">0.08% fee + 0.05% slippage</span>
+            </div>
+            <svg
+              class="chart"
+              viewBox="0 0 820 260"
+              role="img"
+              aria-label="Sample paper account equity curve"
+            >
+              <defs>
+                <linearGradient id="equityFill" x1="0" x2="0" y1="0" y2="1">
+                  <stop
+                    offset="0%"
+                    stop-color="#27b39a"
+                    stop-opacity="0.32"
+                  ></stop>
+                  <stop
+                    offset="100%"
+                    stop-color="#27b39a"
+                    stop-opacity="0"
+                  ></stop>
+                </linearGradient>
+              </defs>
+              <path
+                class="grid-line"
+                d="M20 60 H800 M20 130 H800 M20 200 H800"
+              ></path>
+              <path
+                class="area"
+                d="M20 190 C80 160 120 170 170 140 C230 95 270 120 330 86 C390 52 460 68 510 92 C570 126 620 86 680 72 C735 60 770 78 800 54 L800 240 L20 240 Z"
+              ></path>
+              <path
+                class="line"
+                d="M20 190 C80 160 120 170 170 140 C230 95 270 120 330 86 C390 52 460 68 510 92 C570 126 620 86 680 72 C735 60 770 78 800 54"
+              ></path>
+            </svg>
+          </div>
+
+          <div class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Recent review</p>
+                <h2>Paper trades</h2>
+              </div>
+            </div>
+            <ul class="trade-list">
+              <li>
+                <span>BTCUSDT</span><strong>+1.8R</strong
+                ><small>Trailing exit</small>
+              </li>
+              <li>
+                <span>SOLUSDT</span><strong>-0.7R</strong
+                ><small>Stop respected</small>
+              </li>
+              <li>
+                <span>ETHUSDT</span><strong>+0.4R</strong
+                ><small>Partial target</small>
+              </li>
+              <li>
+                <span>WIFUSDT</span><strong>-1.0R</strong
+                ><small>Overheat tag</small>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section id="scanner" class="workspace compact">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Market anomaly scanner</p>
+            <h2>Unusual moves, not trade instructions.</h2>
+          </div>
+          <div class="segmented" aria-label="Risk filter">
+            <button class="active" type="button" data-risk-filter="All">
+              All
+            </button>
+            <button type="button" data-risk-filter="High">High</button>
+            <button type="button" data-risk-filter="Medium">Medium</button>
+            <button type="button" data-risk-filter="Low">Low</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>1h move</th>
+                <th>24h move</th>
+                <th>Volume expansion</th>
+                <th>Risk score</th>
+                <th>Context</th>
+              </tr>
+            </thead>
+            <tbody id="scannerRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="paper" class="workspace compact two-col">
+        <div>
+          <p class="eyebrow">Paper trading</p>
+          <h2>Practice with realistic costs before risking capital.</h2>
+          <p class="body-copy">
+            Every simulated trade includes visible fee and slippage assumptions
+            so the review does not pretend fills were perfect.
+          </p>
+        </div>
+        <div class="panel calculator">
+          <label>Virtual capital <input value="$10,000" readonly /></label>
+          <label>Entry price <input value="64,240" readonly /></label>
+          <label>Stop distance <input value="1.2%" readonly /></label>
+          <label
+            >Target plan <input value="Trail after +1.5R" readonly
+          /></label>
+          <label>
+            Risk per paper trade
+            <input
+              id="riskInput"
+              type="range"
+              min="0.25"
+              max="2"
+              value="0.75"
+              step="0.25"
+            />
+          </label>
+          <div class="result">
+            Planned risk: <strong id="plannedRisk">0.75%</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="journal" class="workspace compact">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Trade journal</p>
+            <h2>Separate strategy problems from behavior problems.</h2>
+          </div>
+        </div>
+        <div class="journal-grid">
+          <article data-journal-card>
+            <span>Entry reason</span>
+            <p>
+              Volume expansion after range breakout; volatility already
+              elevated.
+            </p>
+          </article>
+          <article data-journal-card>
+            <span>Rule adherence</span>
+            <p>
+              Stop was placed before entry. Position size stayed inside plan.
+            </p>
+          </article>
+          <article data-journal-card>
+            <span>Review tags</span>
+            <p>Good Exit, High Volatility, No FOMO.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="replay" class="workspace compact replay">
+        <div>
+          <p class="eyebrow">Strategy replay</p>
+          <h2>Replay the decision, candle by candle.</h2>
+          <p class="body-copy" id="replayCopy">
+            Compare fixed target, trailing exit, and no-stop outcomes on the
+            same historical move.
+          </p>
+          <div class="segmented replay-controls" aria-label="Replay scenario">
+            <button class="active" type="button" data-replay="trailing">
+              Trailing exit
+            </button>
+            <button type="button" data-replay="fixed">Fixed target</button>
+            <button type="button" data-replay="nostop">No-stop review</button>
+          </div>
+        </div>
+        <div class="timeline" aria-label="Sample replay timeline">
+          <span style="height: 32%"></span>
+          <span style="height: 46%"></span>
+          <span style="height: 70%"></span>
+          <span style="height: 62%"></span>
+          <span style="height: 88%"></span>
+          <span style="height: 74%"></span>
+          <span style="height: 54%"></span>
+          <span style="height: 38%"></span>
+        </div>
+      </section>
+
+      <section id="report" class="workspace compact two-col final">
+        <div>
+          <p class="eyebrow">Daily HTML report</p>
+          <h2>End the day with a review artifact.</h2>
+          <p class="body-copy">
+            Summarize anomalies, paper performance, drawdown, largest loss, and
+            tomorrow's watchlist without turning watchlists into
+            recommendations.
+          </p>
+        </div>
+        <a class="primary-button" href="../reports/daily-review-sample.html"
+          >Open sample report</a
+        >
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
