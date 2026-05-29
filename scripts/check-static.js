@@ -32,6 +32,7 @@ const requiredFiles = [
   "docs/COMPLIANCE_BOUNDARY.md",
   "marketing/DEMO_STORYBOARD.md",
   "marketing/PUBLISHING_CHECKLIST.md",
+  "marketing/PROMOTION_READY.md",
   "LICENSE",
   "CONTRIBUTING.md",
   "SECURITY.md",

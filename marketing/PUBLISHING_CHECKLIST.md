@@ -42,6 +42,8 @@ Post sequence:
 3. Thread about why the project avoids directional trade calls.
 4. Screenshot post showing the daily report.
 
+Use the ready-to-copy posts in `marketing/PROMOTION_READY.md`.
+
 ## Reddit
 
 Do not start with a link-only post.
